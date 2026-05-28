@@ -31,7 +31,7 @@ class ZenithApp:
             while self.running:
                 if self.mode == "MENU":
                     clear_screen()
-                    print("=== ZENITH-TIME-OS (TERMUX READY) ===")
+                    print("=== ZENITH-TIME-OS (TERMINAL) ===")
                     print("1. Clock\n2. Stopwatch\n3. Add Alarm\nQ. Quit")
                     # Untuk menu, kita pakai input biasa
                     termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
