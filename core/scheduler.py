@@ -10,13 +10,12 @@ class AlarmScheduler:
 
     def _monitor(self):
         while self._running:
-            alarms = self.db.get_all_alarms()
+            alarms = self.db.get_alarms()
             now = datetime.datetime.now().strftime("%H:%M")
             if now in alarms:
                 play_alert()
-                time.sleep(60) # Prevent multiple triggers in same minute
+                time.sleep(60)
             time.sleep(10)
 
     def start(self):
-        thread = threading.Thread(target=self._monitor, daemon=True)
-        thread.start()
+        threading.Thread(target=self._monitor, daemon=True).start()
