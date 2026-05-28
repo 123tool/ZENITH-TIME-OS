@@ -1,7 +1,6 @@
 from rich.panel import Panel
 from rich.text import Text
 import pyfiglet
-import datetime
 import json
 
 class Renderer:
