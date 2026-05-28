@@ -5,8 +5,7 @@ class AlarmScheduler:
         self.db = db
     def _monitor(self):
         while True:
-            now = datetime.datetime.now().strftime("%H:%M")
-            if now in self.db.get_alarms():
+            if datetime.datetime.now().strftime("%H:%M") in self.db.get_alarms():
                 play_alert()
                 time.sleep(60)
             time.sleep(10)
